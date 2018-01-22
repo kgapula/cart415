@@ -9,7 +9,8 @@ namespace Complete
         public Light m_Sun;
         public Transform[] m_WeakPoints;
         public float m_SunDamage = 0.5f;
-        public float m_Regen = 0.01f;
+		//create a variable for the health regeneration
+        public float m_Regen = 0.1f;
 
         //create a variable to check whether or not the tank is allowed to shoot
         //we want the tank to shoot only if it's in sunlight
@@ -44,8 +45,11 @@ namespace Complete
             {
                 TakeDamage(m_SunDamage);
             } else
-            {
-                TakeDamage(-m_Regen);
+            {	
+				if (m_CurrentHealth < 100f) {
+					//if the tank is hiding in the shadow, regenerate some health
+					TakeDamage (-m_Regen);
+				}
             }
         }
     }

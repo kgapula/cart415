@@ -102,11 +102,11 @@ namespace Complete
                     m_ShootingAudio.clip = m_FireClip;
                     m_ShootingAudio.Play();
 
-                    // Reset the launch force.  This is a precaution in case of missing button events.
-                    m_CurrentLaunchForce = m_MinLaunchForce;
+                    
                 }
             }
-
+			// Reset the launch force.  This is a precaution in case of missing button events.
+			m_CurrentLaunchForce = m_MinLaunchForce;
         }
     }
 }
