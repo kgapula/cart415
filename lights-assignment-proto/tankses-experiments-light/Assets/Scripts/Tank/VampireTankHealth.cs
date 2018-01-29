@@ -21,9 +21,14 @@ namespace Complete
         protected override void Awake()
         {
             base.Awake();
-
-            m_ReverseSun = -m_Sun.transform.forward; 
         }
+
+		public void SetupSun(Light sun)
+		{
+			Debug.Log (sun);
+			m_Sun = sun;
+			m_ReverseSun = -m_Sun.transform.forward; 
+		}
 
         public void Update()
         {

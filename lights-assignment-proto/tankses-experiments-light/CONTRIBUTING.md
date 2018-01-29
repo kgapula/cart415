@@ -1,1 +1,0 @@
-This is a solo project in terms of its design and development. However, I've always welcomed input from other developers and have even merged a couple of pull requests on other games when people offered them.

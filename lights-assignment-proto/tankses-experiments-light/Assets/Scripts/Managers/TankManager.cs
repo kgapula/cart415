@@ -21,6 +21,8 @@ namespace Complete
         [HideInInspector] public int m_Wins;                    // The number of wins this player has so far.
 		[HideInInspector] public List<Transform> m_WayPointList;
 
+		[HideInInspector] public Light m_Sun;
+
         private TankMovement m_Movement;                        // Reference to tank's movement script, used to disable and enable control.
         private TankShooting m_Shooting;                        // Reference to tank's shooting script, used to disable and enable control.
         private GameObject m_CanvasGameObject;                  // Used to disable the world space UI during the Starting and Ending phases of each round.
@@ -28,6 +30,7 @@ namespace Complete
 
 		public void SetupAI(List<Transform> wayPointList)
 		{
+			m_Instance.GetComponent<VampireTankHealth>().SetupSun(m_Sun);
 			m_StateController = m_Instance.GetComponent<StateController> ();
 			m_StateController.SetupAI (true, wayPointList);
 
@@ -52,6 +55,7 @@ namespace Complete
 		public void SetupPlayerTank ()
         {
             // Get references to the components.
+			m_Instance.GetComponent<VampireTankHealth>().SetupSun(m_Sun);
 
 			m_Movement = m_Instance.GetComponent<TankMovement> ();
             m_Shooting = m_Instance.GetComponent<TankShooting> ();
