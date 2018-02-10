@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoundTesting", "Assembly-CSharp.csproj", "{57F35B2A-F7AD-B115-18F9-1A5328145DC2}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SoundTesting", "Assembly-CSharp-Editor.csproj", "{4CEC0F4D-41B8-AB57-C98E-D1D1B4B00036}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{57F35B2A-F7AD-B115-18F9-1A5328145DC2}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{57F35B2A-F7AD-B115-18F9-1A5328145DC2}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{57F35B2A-F7AD-B115-18F9-1A5328145DC2}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{57F35B2A-F7AD-B115-18F9-1A5328145DC2}.Release|Any CPU.Build.0 = Release|Any CPU
+		{4CEC0F4D-41B8-AB57-C98E-D1D1B4B00036}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{4CEC0F4D-41B8-AB57-C98E-D1D1B4B00036}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{4CEC0F4D-41B8-AB57-C98E-D1D1B4B00036}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{4CEC0F4D-41B8-AB57-C98E-D1D1B4B00036}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
