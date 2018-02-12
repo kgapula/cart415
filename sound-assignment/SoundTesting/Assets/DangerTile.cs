@@ -57,7 +57,7 @@ public class DangerTile : MonoBehaviour {
 	}
 
 	void OnCollisionExit(Collision collision) {
-		if (collision.gameObject.tag == "Player") {
+		if (collision.gameObject.tag == "Player" && !GameObject.Find("GameManager").GetComponent<AudioControlScript>().musicOn) {
 			Debug.Log ("Player is in no longer in danger");
 		} 
 	}
