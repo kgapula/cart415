@@ -12,7 +12,11 @@ public class SafeTileScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-		
+		if (GameObject.Find ("GameManager").GetComponent<AudioControlScript> ().musicOn) {
+			gameObject.GetComponent<MeshRenderer> ().enabled = false;
+		} else if(!GameObject.Find ("GameManager").GetComponent<AudioControlScript> ().musicOn) {
+			gameObject.GetComponent<MeshRenderer> ().enabled = true;
+		}
 	}
 
 	void OnCollisionEnter(Collision collision) {

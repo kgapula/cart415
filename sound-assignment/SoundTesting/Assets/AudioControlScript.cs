@@ -12,6 +12,7 @@ public class AudioControlScript : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
 		backgroundMusic = GetComponent<AudioSource> ();
+
 	}
 
 
@@ -27,19 +28,30 @@ public class AudioControlScript : MonoBehaviour {
 			musicOn = !musicOn;
 			Debug.Log ("musicOn = " + musicOn);
 		}
-}
 
-	public bool setupMusic(bool musicOn) {
-			if (musicOn) {
-				Debug.Log (musicOn);
-				Debug.Log ("Music is on");
-				backgroundMusic.mute = false;
-				return true;
-			} else {
-				Debug.Log ("Music is off");
-				backgroundMusic.mute = true;
-				return false;
-			}
-		//		return true;
-	}
+		if (!musicOn) {
+			backgroundMusic.mute = true;
+		} else {
+			backgroundMusic.mute = false;
+		}
+}
+		
+//	public bool setMusic(bool musicOn) {
+//		//if the boolean musicOn is true, play the background music
+//			if (musicOn) {
+//				Debug.Log (musicOn);
+//				Debug.Log ("Music is on");
+//				//backgroundMusic.mute = false;
+//				gameObject.GetComponent<AudioSource> ().enabled = true;
+//				return true;
+//			} else {
+//			//if the boolean is false, pause the background music
+//				Debug.Log ("Music is off");
+//				//backgroundMusic.mute = true;
+//				//backgroundMusic.Pause();
+//				gameObject.GetComponent<AudioSource> ().enabled = false;
+//				return false;
+//			}
+//		//		return true;
+//	}
 }

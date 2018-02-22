@@ -13,17 +13,11 @@ public class DangerTile : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-//		if (Input.GetKeyDown("m")) {
-//			musicOn = !musicOn;
-//
-//			if (musicOn) {
-//				Debug.Log (musicOn);
-//				Debug.Log ("Music is on");
-//			} else {
-//				Debug.Log ("Music is off");
-//			}
-//
-//		}
+		if (GameObject.Find ("GameManager").GetComponent<AudioControlScript> ().musicOn) {
+			gameObject.GetComponent<MeshRenderer> ().enabled = false;
+		} else if(!GameObject.Find ("GameManager").GetComponent<AudioControlScript> ().musicOn) {
+			gameObject.GetComponent<MeshRenderer> ().enabled = true;
+		}
 	}
 
 //	public bool setupMusic(bool musicOn) {
