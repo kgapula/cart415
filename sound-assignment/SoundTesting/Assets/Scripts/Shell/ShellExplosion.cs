@@ -48,7 +48,7 @@ public class ShellExplosion : MonoBehaviour
 
             // Calculate the amount of damage the target should take based on it's distance from the shell.
 //            float damage = CalculateDamage(targetRigidbody.position);
-			float damage = 50f;
+			float damage = 33f;
 
             // Deal this damage to the tank.
             targetHealth.TakeDamage(damage);

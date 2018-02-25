@@ -8,6 +8,8 @@ public class AudioControlScript : MonoBehaviour {
 	[SerializeField] AudioSource backgroundMusic;
 	//create the boolean toggling the audiosource on and off
 	public bool musicOn = true;
+	private float nextActionTime = 0.0f;
+	public float period = 5f;
 
 	// Use this for initialization
 	void Start () {
@@ -24,9 +26,18 @@ public class AudioControlScript : MonoBehaviour {
 //		if(musicOn) {
 //			backgroundMusic.mute = !backgroundMusic.mute;
 		//		}
-		if (Input.GetKeyDown ("m")) {
+
+
+
+//		if (Input.GetKeyDown ("m")) {
+//			musicOn = !musicOn;
+//			Debug.Log ("musicOn = " + musicOn);
+//		}
+		period = Random.Range(1, 5);
+
+		if (Time.time >= nextActionTime) {
+			nextActionTime += period;
 			musicOn = !musicOn;
-			Debug.Log ("musicOn = " + musicOn);
 		}
 
 		if (!musicOn) {

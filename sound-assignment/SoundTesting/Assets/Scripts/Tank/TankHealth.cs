@@ -39,7 +39,7 @@ public class TankHealth : MonoBehaviour
     {
         // Reduce current health by the amount of damage done.
         m_CurrentHealth -= amount;
-
+		Debug.Log ("Tank is losing health");
         // Change the UI elements appropriately.
         SetHealthUI();
 

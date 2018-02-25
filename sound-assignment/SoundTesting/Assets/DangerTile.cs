@@ -43,6 +43,8 @@ public class DangerTile : MonoBehaviour {
 		if (collision.gameObject.tag == "Player" && !GameObject.Find("GameManager").GetComponent<AudioControlScript>().musicOn) {
 			Debug.Log ("Player is in danger");
 
+			collision.gameObject.GetComponent<TankHealth> ().TakeDamage (33f);
+
 //			if (!musicOn) {
 //				Debug.Log ("Player has taken damage");
 //			}
