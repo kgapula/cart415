@@ -33,7 +33,7 @@ public class AudioControlScript : MonoBehaviour {
 //			musicOn = !musicOn;
 //			Debug.Log ("musicOn = " + musicOn);
 //		}
-		period = Random.Range(1, 5);
+		period = Random.Range(2, 5);
 
 		if (Time.time >= nextActionTime) {
 			nextActionTime += period;

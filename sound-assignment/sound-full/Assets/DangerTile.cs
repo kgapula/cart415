@@ -43,9 +43,9 @@ public class DangerTile : MonoBehaviour {
 
 	void OnCollisionEnter(Collision collision) {
 		if (collision.gameObject.tag == "Player" && !GameObject.Find("GameManager").GetComponent<AudioControlScript>().musicOn) {
-			Debug.Log ("Player is in danger");
+			//Debug.Log ("Player is in danger");
 
-			collision.gameObject.GetComponent<TankHealth> ().TakeDamage (35f);
+			collision.gameObject.GetComponent<TankHealth> ().TakeDamage (25f);
 
 //			if (!musicOn) {
 //				Debug.Log ("Player has taken damage");
@@ -56,7 +56,7 @@ public class DangerTile : MonoBehaviour {
 
 	void OnCollisionExit(Collision collision) {
 		if (collision.gameObject.tag == "Player" && !GameObject.Find("GameManager").GetComponent<AudioControlScript>().musicOn) {
-			Debug.Log ("Player is in no longer in danger");
+			//Debug.Log ("Player is in no longer in danger");
 		} 
 	}
 }

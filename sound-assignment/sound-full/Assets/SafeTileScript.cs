@@ -23,7 +23,7 @@ public class SafeTileScript : MonoBehaviour {
 
 	void OnCollisionEnter(Collision collision) {
 		if (collision.gameObject.tag == "Player") {
-			Debug.Log ("Tank is safe");
+			//Debug.Log ("Tank is safe");
 			isSafe = true;
 		} 
 	}
@@ -31,7 +31,7 @@ public class SafeTileScript : MonoBehaviour {
 	void OnCollisionExit(Collision collision) {
 		if (collision.gameObject.tag == "Player") {
 			//gameObject.GetComponent<MeshRenderer> ().enabled = false;
-			Debug.Log("Player has left safe tile");
+			//Debug.Log("Player has left safe tile");
 			isSafe = false;
 		} 
 	}

@@ -188,7 +188,7 @@ public class GameManager : MonoBehaviour
 
         if (m_GameWinner != null)
             //clear out message string, color it the right text color and replace it with this
-            message = "GAME OVER";
+            message = "GAME OVER!";
 
         //return the piece of text
         return message;
