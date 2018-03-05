@@ -1,8 +1,9 @@
-﻿<Properties StartupItem="UniteBoston2015TrainingDay.csproj">
+﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\Scripts\Camera\CameraControl.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\MorphScript.cs">
     <Files>
       <File FileName="Assets\Scripts\Camera\CameraControl.cs" Line="81" Column="4" />
+      <File FileName="Assets\MorphScript.cs" Line="21" Column="25" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
