@@ -4,6 +4,8 @@ using UnityEngine;
 
 public class MorphScript : MonoBehaviour {
 	public Transform Tree;
+	//public GameObject OilStorage;
+
 	//future: create an array to store model names and pull those names randomly when instantiating new objects
 	[SerializeField] public string[] objectArray;
 //	public string[] objectArray = new string[]{"Object1", "Object2"};
@@ -18,15 +20,20 @@ public class MorphScript : MonoBehaviour {
 		
 	}
 
-	public string GetRandomString() {
+	public string GetRandomObject() {
+		//get a random object from the array
 		return objectArray [Random.Range (0, objectArray.Length)];
 	}
 
 	void OnCollisionEnter (Collision collision) {
+		
 		//if the block was hit by a shell
-		if (collision.gameObject.tag == "Shell") {
+		if (collision.gameObject.tag == "Player") {
 			Debug.Log ("Morph object was hit");
-			//GetRandomString ();
+
+			//get a random string from the array
+			//GetRandomObject ();
+
 			//change the model by placing a new object
 			Instantiate (Tree, transform.position, transform.rotation);
 			//destroy the old object
