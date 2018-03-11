@@ -3,26 +3,33 @@ using System.Collections.Generic;
 using UnityEngine;
 
 public class MorphScript : MonoBehaviour {
-	public Transform Tree;
+		
+
+		List<Transform> prefabList = new List<Transform>();
+		public Transform Cactus;
+		public Transform BustedTank;
+		public Transform Helipad;
+		public Transform Tree;
+
 	//public GameObject OilStorage;
 
 	//future: create an array to store model names and pull those names randomly when instantiating new objects
 	[SerializeField] public string[] objectArray;
 //	public string[] objectArray = new string[]{"Object1", "Object2"};
 
+
+
 	// Use this for initialization
 	void Start () {
-		
+		prefabList.Add (Cactus);
+		prefabList.Add (BustedTank);
+		prefabList.Add (Helipad);
+		prefabList.Add (Tree);
 	}
 	
 	// Update is called once per frame
 	void Update () {
 		
-	}
-
-	public string GetRandomObject() {
-		//get a random object from the array
-		return objectArray [Random.Range (0, objectArray.Length)];
 	}
 
 	void OnCollisionEnter (Collision collision) {
@@ -31,11 +38,14 @@ public class MorphScript : MonoBehaviour {
 		if (collision.gameObject.tag == "Player") {
 			Debug.Log ("Morph object was hit");
 
-			//get a random string from the array
-			//GetRandomObject ();
+			//get a random object from the array
+			int prefabIndex = UnityEngine.Random.Range(0,prefabList.Count-1);
+			Debug.Log (prefabIndex);
 
 			//change the model by placing a new object
-			Instantiate (Tree, transform.position, transform.rotation);
+			//Instantiate (Tree, transform.position, transform.rotation);
+			Instantiate(prefabList[prefabIndex], transform.position, transform.rotation);
+
 			//destroy the old object
 			Destroy (gameObject);
 		}
