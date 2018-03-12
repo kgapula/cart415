@@ -4,8 +4,10 @@ using UnityEngine.UI;
 public class TankShooting : MonoBehaviour
 {
     public int m_PlayerNumber = 1;       
-    public Rigidbody m_Shell;            
-    public Transform m_FireTransform;    
+    public Rigidbody m_Shell;
+	public GameObject MorphObject;
+    public Transform m_FireTransform;
+	public Transform MorphSpawn;
     public Slider m_AimSlider;           
     public AudioSource m_ShootingAudio;  
     public AudioClip m_ChargingClip;     
@@ -15,7 +17,8 @@ public class TankShooting : MonoBehaviour
     public float m_MaxChargeTime = 0.75f;
 
     //input axis are strings, so so input buttons are also strings
-    private string m_FireButton;         
+    private string m_FireButton;  
+	private string PlaceMorphButton;
     private float m_CurrentLaunchForce;  
     private float m_ChargeSpeed;         
     private bool m_Fired;                
@@ -33,6 +36,8 @@ public class TankShooting : MonoBehaviour
         m_FireButton = "Fire" + m_PlayerNumber;
         //remember Speed equals Distance over Time
         m_ChargeSpeed = (m_MaxLaunchForce - m_MinLaunchForce) / m_MaxChargeTime;
+
+		PlaceMorphButton = "PlaceMorph" + m_PlayerNumber;
     }
     
 
@@ -73,6 +78,11 @@ public class TankShooting : MonoBehaviour
             // ... launch the shell.
             Fire();
         }
+
+		if (Input.GetButtonDown (PlaceMorphButton)) {
+			Place ();
+		}
+
     }
 
 
@@ -84,7 +94,7 @@ public class TankShooting : MonoBehaviour
         // Create an instance of the shell and store a reference to it's rigidbody. Treat object as Rigidbody.
         Rigidbody shellInstance =
             Instantiate(m_Shell, m_FireTransform.position, m_FireTransform.rotation) as Rigidbody;
-
+		shellInstance.tag = "Shell";
         // Set the shell's velocity to the launch force in the fire position's forward direction.
         shellInstance.velocity = m_CurrentLaunchForce * m_FireTransform.forward; ;
 
@@ -95,4 +105,9 @@ public class TankShooting : MonoBehaviour
         // Reset the launch force.  This is a precaution in case of missing button events.
         m_CurrentLaunchForce = m_MinLaunchForce;
     }
+
+	private void Place() {
+		GameObject morphInstance =
+			Instantiate (MorphObject, MorphSpawn.position, MorphSpawn.rotation) as GameObject;
+	}
 }

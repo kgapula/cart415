@@ -10,11 +10,12 @@ public class MorphScript : MonoBehaviour {
 		public Transform BustedTank;
 		public Transform Helipad;
 		public Transform Tree;
+		public Transform OilStorage;
 
 	//public GameObject OilStorage;
 
 	//future: create an array to store model names and pull those names randomly when instantiating new objects
-	[SerializeField] public string[] objectArray;
+	//[SerializeField] public string[] objectArray;
 //	public string[] objectArray = new string[]{"Object1", "Object2"};
 
 
@@ -25,6 +26,7 @@ public class MorphScript : MonoBehaviour {
 		prefabList.Add (BustedTank);
 		prefabList.Add (Helipad);
 		prefabList.Add (Tree);
+		prefabList.Add (OilStorage);
 	}
 	
 	// Update is called once per frame
@@ -32,10 +34,29 @@ public class MorphScript : MonoBehaviour {
 		
 	}
 
-	void OnCollisionEnter (Collision collision) {
-		
+//	void OnCollisionEnter (Collision collision) {
+//		
+//		//if the block was hit by a shell
+//		if (collision.gameObject.tag == "Player") {
+//			Debug.Log ("Morph object was hit");
+//
+//			//get a random object from the array
+//			int prefabIndex = UnityEngine.Random.Range(0,prefabList.Count-1);
+//			Debug.Log (prefabIndex);
+//
+//			//change the model by placing a new object
+//			//Instantiate (Tree, transform.position, transform.rotation);
+//			Instantiate(prefabList[prefabIndex], transform.position, transform.rotation);
+//
+//			//destroy the old object
+//			Destroy (gameObject);
+//		}
+//	}
+
+	void OnTriggerEnter (Collider other) {
+
 		//if the block was hit by a shell
-		if (collision.gameObject.tag == "Player") {
+		if (other.gameObject.tag == "Shell") {
 			Debug.Log ("Morph object was hit");
 
 			//get a random object from the array
@@ -50,4 +71,5 @@ public class MorphScript : MonoBehaviour {
 			Destroy (gameObject);
 		}
 	}
+
 }
