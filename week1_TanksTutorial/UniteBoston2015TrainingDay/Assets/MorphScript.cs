@@ -11,6 +11,8 @@ public class MorphScript : MonoBehaviour {
 		public Transform Helipad;
 		public Transform Tree;
 		public Transform OilStorage;
+		public Transform Building;
+		public Transform Building2;
 
 	//public GameObject OilStorage;
 
@@ -27,6 +29,8 @@ public class MorphScript : MonoBehaviour {
 		prefabList.Add (Helipad);
 		prefabList.Add (Tree);
 		prefabList.Add (OilStorage);
+		prefabList.Add (Building);
+		prefabList.Add (Building2);
 	}
 	
 	// Update is called once per frame
