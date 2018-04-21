@@ -1,0 +1,29 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sound-full", "Assembly-CSharp.csproj", "{93E196CE-D39C-F040-A990-FCFE018E7696}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "sound-full", "Assembly-CSharp-Editor.csproj", "{B5CFA670-984A-943E-FA4B-F6182A822CCD}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{93E196CE-D39C-F040-A990-FCFE018E7696}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{93E196CE-D39C-F040-A990-FCFE018E7696}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{93E196CE-D39C-F040-A990-FCFE018E7696}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{93E196CE-D39C-F040-A990-FCFE018E7696}.Release|Any CPU.Build.0 = Release|Any CPU
+		{B5CFA670-984A-943E-FA4B-F6182A822CCD}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{B5CFA670-984A-943E-FA4B-F6182A822CCD}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{B5CFA670-984A-943E-FA4B-F6182A822CCD}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{B5CFA670-984A-943E-FA4B-F6182A822CCD}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+	GlobalSection(MonoDevelopProperties) = preSolution
+		StartupItem = Assembly-CSharp.csproj
+	EndGlobalSection
+EndGlobal
