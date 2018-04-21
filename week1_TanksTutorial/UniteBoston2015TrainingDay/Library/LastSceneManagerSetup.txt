@@ -1,4 +1,4 @@
 sceneSetups:
-- path: Assets/Scenes/objects_morphButton.unity
+- path: Assets/Scenes/finalWIP/lightObjectReset.unity
   isLoaded: 1
   isActive: 1
