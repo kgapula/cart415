@@ -1,6 +1,7 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class AudioControlScript : MonoBehaviour {
 
@@ -13,6 +14,9 @@ public class AudioControlScript : MonoBehaviour {
 	private float soundTime = 0.0f;
 	private bool timeForSound = false;
 	public float period = 5f;
+	public Text countText;
+	public float nextActionTimeText = 0.0f;
+
 
 	// Use this for initialization
 	void Start () {
@@ -24,18 +28,7 @@ public class AudioControlScript : MonoBehaviour {
 	
 	// Update is called once per frame
 	void Update () {
-//		Debug.Log (GetComponent<DangerTile> ().setupMusic (musicOn));
-//		if (GetComponent<DangerTile> ().setupMusic (musicOn: true)) {
-//		if(musicOn) {
-//			backgroundMusic.mute = !backgroundMusic.mute;
-		//		}
 
-
-
-//		if (Input.GetKeyDown ("m")) {
-//			musicOn = !musicOn;
-//			Debug.Log ("musicOn = " + musicOn);
-//		}
 		period = Random.Range(2, 5);
 
 		if (Time.time >= nextActionTime) {
@@ -44,8 +37,10 @@ public class AudioControlScript : MonoBehaviour {
 
 		if (Time.time >= nextActionTime) {
 			nextActionTime += period;
-			//nextActionTime-1
-			//whistle.Play ();
+			nextActionTimeText = (nextActionTime - Time.time);
+			Debug.Log ("nextActionTime" + " " + (nextActionTime - Time.time));
+
+
 			musicOn = !musicOn;
 
 		}
@@ -55,24 +50,13 @@ public class AudioControlScript : MonoBehaviour {
 		} else {
 			backgroundMusic.mute = false;
 		}
+
+		setText ();
 }
-		
-//	public bool setMusic(bool musicOn) {
-//		//if the boolean musicOn is true, play the background music
-//			if (musicOn) {
-//				Debug.Log (musicOn);
-//				Debug.Log ("Music is on");
-//				//backgroundMusic.mute = false;
-//				gameObject.GetComponent<AudioSource> ().enabled = true;
-//				return true;
-//			} else {
-//			//if the boolean is false, pause the background music
-//				Debug.Log ("Music is off");
-//				//backgroundMusic.mute = true;
-//				//backgroundMusic.Pause();
-//				gameObject.GetComponent<AudioSource> ().enabled = false;
-//				return false;
-//			}
-//		//		return true;
-//	}
+
+	void setText() {
+		int roundedNextAction = Mathf.CeilToInt (nextActionTimeText);
+		countText.text = "Next Action in: " + roundedNextAction.ToString();
+	}
+
 }

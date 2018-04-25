@@ -34,6 +34,7 @@ namespace Complete
         {
             bool damage = false;
             inLight = false;
+			Debug.Log (inLight);
             for (int i = 0; i < m_WeakPoints.Length; i++)
             {
                 if (!Physics.Raycast(m_WeakPoints[i].position, m_ReverseSun, 100f, LayerMask.GetMask("Default")))
